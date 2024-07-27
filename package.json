@@ -1,0 +1,29 @@
+{
+  "name": "hello-react",
+  "version": "1.0.0",
+  "description": "\"This is a React Project\"",
+  "main": "App.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "Jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adriatic07/Hello-React.git"
+  },
+  "author": "Aniket Jain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adriatic07/Hello-React/issues"
+  },
+  "homepage": "https://github.com/adriatic07/Hello-React#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
