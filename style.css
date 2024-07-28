@@ -77,3 +77,36 @@
   color: green;
   cursor: pointer;
 }
+
+.filter {
+  display: flex;
+  justify-content: center;
+}
+
+.search-box {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.search-btn {
+  cursor: pointer;
+  color: rgb(4, 0, 128);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.login-btn {
+  height: 30px;
+  cursor: pointer;
+  background-color: rgb(219, 209, 228);
+  border-radius: 8px;
+  font-size: 16px;
+  padding-bottom: 2px;
+}
+
+.reset {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: blue;
+  cursor: pointer;
+}
