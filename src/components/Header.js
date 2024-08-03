@@ -1,23 +1,36 @@
 import { LOGO_URL } from "../Utils/constants";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
 
-  console.log("Header Render");
-
-  useEffect(() => {
-    console.log("Use Effect Render");
-  }, [btnName]);
+  const style = {
+    textDecoration: "none",
+  };
+  // useEffect(() => {
+  //   console.log("Use Effect Render");
+  // }, [btnName]);
 
   return (
     <div className="header">
       <img className="logo" src={LOGO_URL} alt="logo" />
       <ul className="nav-items">
-        <li>Home</li>
-        <li>About Us</li>
-        <li>Contact Us</li>
-        <li>Menu</li>
+        <li>
+          <Link style={style} to="/">
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link style={style} to="/about">
+            About Us
+          </Link>
+        </li>
+        <li>
+          <Link style={style} to="/contact">
+            Contact Us
+          </Link>
+        </li>
         <li>Cart</li>
         <li>
           <button
