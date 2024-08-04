@@ -123,3 +123,8 @@
   height: 400px;
   background-color: #f0f0f0;
 }
+
+.user-card {
+  border: 1px solid black;
+  padding: 10px;
+}
