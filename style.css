@@ -128,3 +128,11 @@
   border: 1px solid black;
   padding: 10px;
 }
+
+.online {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: gray;
+  height: 25em;
+}
