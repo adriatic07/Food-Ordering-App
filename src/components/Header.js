@@ -13,43 +13,49 @@ const Header = () => {
   const onlineStatus = useOnlineStatus();
 
   return (
-    <div className="header">
-      <img className="logo" src={LOGO_URL} alt="logo" />
-      <ul className="nav-items">
-        <li>Online Status:{onlineStatus ? "✅" : "⛔"}</li>
-        <li>
-          <Link style={style} to="/">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link style={style} to="/about">
-            About Us
-          </Link>
-        </li>
-        <li>
-          <Link style={style} to="/contact">
-            Contact Us
-          </Link>
-        </li>
-        <li>
-          <Link style={style} to="/grocery">
-            Grocery
-          </Link>
-        </li>
-        <li>Cart</li>
-        <li>
-          <button
-            className="login-btn"
-            style={btnName === "Login" ? { color: "green" } : { color: "red" }}
-            onClick={() => {
-              btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
-            }}
-          >
-            {btnName}
-          </button>
-        </li>
-      </ul>
+    <div className="flex justify-between drop-shadow-lg bg-green-100">
+      <img className="w-40 h-28 ml-20" src={LOGO_URL} alt="logo" />
+      <div className="flex items-center">
+        <ul className="flex p-4 m-4">
+          <li className="px-4">Online Status:{onlineStatus ? "✅" : "⛔"}</li>
+          <li className="px-4">
+            <Link style={style} to="/">
+              Home
+            </Link>
+          </li>
+          <li className="px-4">
+            <Link style={style} to="/about">
+              About Us
+            </Link>
+          </li>
+          <li className="px-4">
+            <Link style={style} to="/contact">
+              Contact Us
+            </Link>
+          </li>
+          <li className="px-4">
+            <Link style={style} to="/grocery">
+              Grocery
+            </Link>
+          </li>
+          <li className="px-4">Cart</li>
+          <li>
+            <button
+              className="login-btn"
+              style={
+                btnName === "Login" ? { color: "green" } : { color: "red" }
+              }
+              onClick={() => {
+                btnName === "Login"
+                  ? setBtnName("Logout")
+                  : setBtnName("Login");
+              }}
+            >
+              {btnName}
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };

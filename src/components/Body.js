@@ -30,7 +30,7 @@ const Body = () => {
     );
   };
 
-  //console.log(listOfRestaurants);
+  console.log(listOfRestaurants);
 
   const onlineStatus = useOnlineStatus();
 
@@ -47,11 +47,11 @@ const Body = () => {
   }
 
   return (
-    <div className="body">
-      <div className="filter">
+    <div className="body bg-pink-50">
+      <div className="flex justify-center">
         <input
           type="text"
-          className="search-box"
+          className="search-box my-5 border border-black rounded-sm px-1 mx-1"
           placeholder="Search for restaurants"
           value={searchText}
           onChange={(e) => {
@@ -59,7 +59,7 @@ const Body = () => {
           }}
         ></input>
         <button
-          className="search-btn"
+          className="search-btn my-5 px-1 rounded-sm bg-green-200 hover:bg-green-100  hover:border border-black"
           onClick={() => {
             const filteredRestaurant = listOfRestaurants.filter((res) =>
               res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -71,7 +71,7 @@ const Body = () => {
         </button>
 
         <button
-          className="filter-btn"
+          className="filter-btn mx-2 my-5 rounded-sm bg-slate-200 px-1 hover:bg-slate-100 hover:border border-black"
           onClick={() => {
             const filteredlist = filteredRestaurant.filter(
               (res) => res.info.avgRating > 4.3
@@ -81,11 +81,14 @@ const Body = () => {
         >
           Top Rated Restaurant
         </button>
-        <button className="reset" onClick={fetchData}>
+        <button
+          className="reset my-5 rounded-sm bg-slate-200 px-1 hover:bg-slate-100 hover:border border-black"
+          onClick={fetchData}
+        >
           Reset 🔄
         </button>
       </div>
-      <div className="res-container">
+      <div className="res-container flex flex-wrap justify-center">
         {filteredRestaurant.map((res) => (
           <Link
             to={"/restaurants/" + res.info.id}
