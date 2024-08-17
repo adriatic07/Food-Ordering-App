@@ -1,13 +1,16 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../Utils/useOnlineStatus";
+import UserContext from "../Utils/UserContext";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurant] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   const style = {
     textDecoration: "none",
@@ -69,7 +72,6 @@ const Body = () => {
         >
           Search
         </button>
-
         <button
           className="filter-btn mx-2 my-5 rounded-sm bg-slate-200 px-1 hover:bg-slate-100 hover:border border-black"
           onClick={() => {
@@ -83,10 +85,23 @@ const Body = () => {
         </button>
         <button
           className="reset my-5 rounded-sm bg-slate-200 px-1 hover:bg-slate-100 hover:border border-black"
-          onClick={fetchData}
+          onClick={() => {
+            fetchData(), setSearchText("");
+          }}
         >
           Reset 🔄
         </button>
+        <div className="mx-4">
+          <label className="font-semibold text-gray-700">Username</label>
+          <input
+            type="text"
+            className="search-box my-5 border border-black rounded-sm px-1 mx-1"
+            value={loggedInUser}
+            onChange={(e) => {
+              setUserName(e.target.value);
+            }}
+          ></input>
+        </div>
       </div>
       <div className="res-container flex flex-wrap justify-center">
         {filteredRestaurant.map((res) => (
