@@ -22,7 +22,7 @@
 
 
 
-# Namaste Food
+# App Layout
 
 
 /**
