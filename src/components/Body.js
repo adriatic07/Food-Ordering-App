@@ -33,7 +33,7 @@ const Body = () => {
     );
   };
 
-  console.log(listOfRestaurants);
+  //console.log(listOfRestaurants);
 
   const onlineStatus = useOnlineStatus();
 
